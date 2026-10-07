@@ -1,0 +1,10 @@
+{
+  "name": "galaxy-admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node ../node_modules/next/dist/bin/next dev --turbopack -p 3001",
+    "build": "node ../node_modules/next/dist/bin/next build",
+    "start": "node ../node_modules/next/dist/bin/next start -p 3001"
+  }
+}

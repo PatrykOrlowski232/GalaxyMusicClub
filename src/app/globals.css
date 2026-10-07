@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-galaxy-black: #000000;
+  --color-galaxy-void: #05030a;
+  --color-galaxy-magenta: #e91e8c;
+  --color-galaxy-purple: #9b2dff;
+  --color-galaxy-indigo: #3d1a8c;
+  --color-galaxy-blue: #2b4cff;
+  --color-galaxy-pink: #d4a0c8;
+  --color-galaxy-white: #f5f5f7;
+  --color-galaxy-muted: #9a94a8;
+
+  --font-display: var(--font-orbitron), ui-sans-serif, system-ui, sans-serif;
+  --font-condensed: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-exo), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-galaxy-black);
+    color: var(--color-galaxy-white);
+    font-family: var(--font-body);
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-galaxy-magenta) 45%, transparent);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-up-delay {
+  animation: fade-up 0.9s ease-out 0.15s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 1s ease-out 0.3s both;
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 5s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift 7s ease-in-out infinite;
+}
+
+.galaxy-gradient-text {
+  background: linear-gradient(120deg, #ffffff 0%, #e91e8c 45%, #9b2dff 75%, #2b4cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.galaxy-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-galaxy-magenta) 35%, transparent),
+    0 0 28px color-mix(in oklab, var(--color-galaxy-purple) 35%, transparent);
+}
+
+.galaxy-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, #9b2dff 28%, transparent), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, color-mix(in oklab, #e91e8c 18%, transparent), transparent 55%),
+    radial-gradient(ellipse 40% 35% at 15% 40%, color-mix(in oklab, #2b4cff 16%, transparent), transparent 50%),
+    #000000;
+}
